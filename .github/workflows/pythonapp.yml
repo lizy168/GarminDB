@@ -18,13 +18,13 @@ jobs:
         make setup_repo
     - name: Update Python tools
       run: |
-        .venv/bin/activate && python -m pip install --upgrade pip
+        source .venv/bin/activate && python -m pip install --upgrade pip
     - name: Install dependencies
       run: |
-        .venv/bin/activate && make setup_install
+        source .venv/bin/activate && make setup_install
     - name: Lint with flake8
       run: |
-        .venv/bin/activate && make flake8
+        source .venv/bin/activate && make flake8
     - name: Test
       run: |
-        .venv/bin/activate && make verify_commit
+        source .venv/bin/activate && make verify_commit
